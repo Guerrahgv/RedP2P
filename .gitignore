@@ -12,7 +12,7 @@ package-lock.json
 
 # IDE settings (si usas algún editor como VSCode)
 .vscode/
-
+.idea/
 # Otros archivos temporales
 *.env
 *.tmp
