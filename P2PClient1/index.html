@@ -5,62 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cliente P2P</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h2>Cliente P2P</h2>
-        
+<div class="container">
+    <h1>📂 Cliente P2P</h1>
 
-        
-        <div class="form-container">
-
-        
-        <div class="input-container">
-            <label for="clientId">ID del Cliente (Nombre):</label>
-            <input type="text" id="clientId" placeholder="Ingrese un ID único" required>
-        </div>
-
-
-        <div class="folders-container">
-            <div class="folder">
-                <label for="file-input" >Ruta Archivos Descargados</label>
-                <input type="file" id="downloadFolder" title="ruta de descarga"  class="input-file" webkitdirectory directory multiple>
-                <!--<input type="text" name="pathDownload" id="pathDownload" title="pathDownload" class="pathDownload" disabled > -->       
-            </div>
-            <div class="folder">
-                <label for="file-input" >Ruta Archivos Compartidos</label>
-                <input type="file" id="sharedFolder" title="archivos compartidos" webkitdirectory directory multiple>
-                <!-- <input type="text" name="pathshared" id="pathshared" title="pathshared">  -->
-            </div>
-        </div>
-        
+    <!-- Sección de conexión -->
+    <div class="form-container">
+        <label for="clientId">🆔 ID del Cliente:</label>
+        <input type="text" id="clientId" placeholder="Ingrese su ID" required>
+        <button id="connectButton" class="button">Conectar</button>
     </div>
 
-        <div class="buttSub">
-            <button type="button" class="button" onclick="connect()">Conectar</button>
-         </div>
-
-
-       
-        <!-- Sección de Archivos -->
-        <div class="files-section">
-            <div class="downloadedFilesList downloadedFiles">
-                <div class="titleFiles">
-                    <h3>Archivos Descargados</h3>
-                </div>
-                <ul id="downloadedFilesList"></ul>
-            </div>
-            
-            <div class="sharedFilesList downloadedFiles">
-                <div class="titleFiles">
-                    <h3>Archivos Compartidos</h3>
-                </div>
-                <ul id="sharedFilesList"></ul>
-            </div>
-            
-        </div>
+    <!-- Sección de subida de archivos -->
+    <div class="upload-section">
+        <h2>📤 Enviar Archivo</h2>
+        <input type="file" id="fileInput">
+        <input type="text" id="receiverId" placeholder="ID del receptor">
+        <button id="sendFileButton" class="button">Enviar</button>
     </div>
 
-    <script src="client.js"></script>
+    <!-- Sección de lista de archivos -->
+    <div class="file-list-section">
+        <h2>📑 Archivos Transferidos</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>📄 Archivo</th>
+                <th>🔁 Estado</th>
+            </tr>
+            </thead>
+            <tbody id="fileList">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="client.js"></script>
 </body>
 </html>
