@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente P2P</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Cliente P2P</h2>
+        
+
+        
+        <div class="form-container">
+
+        
+        <div class="input-container">
+            <label for="clientId">ID del Cliente (Nombre):</label>
+            <input type="text" id="clientId" placeholder="Ingrese un ID único" required>
+        </div>
+
+
+        <div class="folders-container">
+            <div class="folder">
+                <label for="file-input" >Ruta Archivos Descargados</label>
+                <input type="file" id="downloadFolder" title="ruta de descarga"  class="input-file" webkitdirectory directory multiple>
+                <!--<input type="text" name="pathDownload" id="pathDownload" title="pathDownload" class="pathDownload" disabled > -->       
+            </div>
+            <div class="folder">
+                <label for="file-input" >Ruta Archivos Compartidos</label>
+                <input type="file" id="sharedFolder" title="archivos compartidos" webkitdirectory directory multiple>
+                <!-- <input type="text" name="pathshared" id="pathshared" title="pathshared">  -->
+            </div>
+        </div>
+        
+    </div>
+
+        <div class="buttSub">
+            <button type="button" class="button" onclick="connect()">Conectar</button>
+         </div>
+
+
+       
+        <!-- Sección de Archivos -->
+        <div class="files-section">
+            <div class="downloadedFilesList downloadedFiles">
+                <div class="titleFiles">
+                    <h3>Archivos Descargados</h3>
+                </div>
+                <ul id="downloadedFilesList"></ul>
+            </div>
+            
+            <div class="sharedFilesList downloadedFiles">
+                <div class="titleFiles">
+                    <h3>Archivos Compartidos</h3>
+                </div>
+                <ul id="sharedFilesList"></ul>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>

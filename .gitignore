@@ -1,0 +1,18 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# Mac system files
+.DS_Store
+
+# npm package-lock
+package-lock.json
+
+# IDE settings (si usas algún editor como VSCode)
+.vscode/
+
+# Otros archivos temporales
+*.env
+*.tmp
